@@ -22,6 +22,7 @@ export function Table() {
 			<thead className="table__head">
 				<tr>
 					<th>Nama Lengkap</th>
+					<th>NPM</th>
 					<th>Email</th>
 					<th>Alamat</th>
 					<th>No. HP</th>
@@ -30,9 +31,10 @@ export function Table() {
 			</thead>
 
 			<tbody className="table__body">
-				{state.mahasiswaList.map(({ _id, name, email, address, phone }) => (
+				{state.mahasiswaList.map(({ _id, name, NPM, email, address, phone }) => (
 					<tr key={_id}>
 						<td>{name}</td>
+						<td>{NPM}</td>
 						<td>{email}</td>
 						<td>{address}</td>
 						<td>{phone}</td>

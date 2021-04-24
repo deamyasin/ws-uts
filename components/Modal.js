@@ -89,7 +89,7 @@ export function Modal() {
 										"Full name is required!"
 									) : (
 										<>
-											Full name&nbsp;<span className="label__required">*</span>
+											Nama Lengkap&nbsp;<span className="label__required">*</span>
 										</>
 									)}
 								</label>
@@ -100,6 +100,39 @@ export function Modal() {
 									placeholder="Full name"
 									className={cx("input", errors.name && "input--error")}
 									ref={register({ required: true })}
+								/>
+							</div>
+
+							<div className="form__element">
+								<label
+									htmlFor="NPM"
+									className={cx("label", errors.NPM && "label--error")}
+								>
+									{errors.NPM ? (
+										`${errors.NPM.message}`
+									) : (
+										<>
+											NPM&nbsp;<span className="label__required">*</span>
+										</>
+									)}
+								</label>
+								<input
+									type="number"
+									id="NPM"
+									name="NPM"
+									placeholder="NPM"
+									className={cx("input", errors.NPM && "input--error")}
+									ref={register({
+										required: "Phone is required!",
+										minLength: {
+											value: 9,
+											message: "Minimum of 9 digits",
+										},
+										maxLength: {
+											value: 9,
+											message: "Maximum of 9 digits",
+										},
+									})}
 								/>
 							</div>
 
@@ -141,7 +174,7 @@ export function Modal() {
 										"Address is required!"
 									) : (
 										<>
-											Address&nbsp;<span className="label__required">*</span>
+											Alamat&nbsp;<span className="label__required">*</span>
 										</>
 									)}
 								</label>
@@ -164,7 +197,7 @@ export function Modal() {
 										`${errors.phone.message}`
 									) : (
 										<>
-											Phone&nbsp;<span className="label__required">*</span>
+											No. Telp&nbsp;<span className="label__required">*</span>
 										</>
 									)}
 								</label>
