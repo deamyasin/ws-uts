@@ -6,6 +6,11 @@ const MahasiswaSchema = new mongoose.Schema({
 		required: [true, "Name is required!"],
 		trim: true,
 	},
+	npm: {
+		type: String,
+		required: [true, "npm is required!"],
+		trim: true,
+	},
 	email: {
 		type: String,
 		required: [true, "Email is required!"],
