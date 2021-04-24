@@ -8,19 +8,19 @@ function* fetchMahasiswas() {
 		const mahasiswaList = yield response.json();
 
 		yield put({
-			type: t.EMPLOYEE_FETCH_SUCCEEDED,
+			type: t.MAHASISWA_FETCH_SUCCEEDED,
 			payload: mahasiswaList.data,
 		});
 	} catch (error) {
 		yield put({
-			type: t.EMPLOYEE_FETCH_FAILED,
+			type: t.MAHASISWA_FETCH_FAILED,
 			payload: error.message,
 		});
 	}
 }
 
 function* watchFetchMahasiswas() {
-	yield takeLatest(t.EMPLOYEE_FETCH_REQUESTED, fetchMahasiswas);
+	yield takeLatest(t.MAHASISWA_FETCH_REQUESTED, fetchMahasiswas);
 }
 
 function* addMahasiswa(action) {
@@ -36,19 +36,19 @@ function* addMahasiswa(action) {
 		const newMahasiswa = yield response.json();
 
 		yield put({
-			type: t.EMPLOYEE_ADD_SUCCEEDED,
+			type: t.MAHASISWA_ADD_SUCCEEDED,
 			payload: newMahasiswa.data,
 		});
 	} catch (error) {
 		yield put({
-			type: t.EMPLOYEE_ADD_FAILED,
+			type: t.MAHASISWA_ADD_FAILED,
 			payload: error.message,
 		});
 	}
 }
 
 function* watchAddMahasiswa() {
-	yield takeLatest(t.EMPLOYEE_ADD_REQUESTED, addMahasiswa);
+	yield takeLatest(t.MAHASISWA_ADD_REQUESTED, addMahasiswa);
 }
 
 function* deleteMahasiswa(action) {
@@ -60,19 +60,19 @@ function* deleteMahasiswa(action) {
 		const deletedMahasiswa = yield response.json();
 
 		yield put({
-			type: t.EMPLOYEE_DELETE_SUCCEEDED,
+			type: t.MAHASISWA_DELETE_SUCCEEDED,
 			payload: deletedMahasiswa.data.id,
 		});
 	} catch (error) {
 		yield put({
-			type: t.EMPLOYEE_DELETE_FAILED,
+			type: t.MAHASISWA_DELETE_FAILED,
 			payload: error.message,
 		});
 	}
 }
 
 function* watchRemoveMahasiswa() {
-	yield takeLatest(t.EMPLOYEE_DELETE_REQUESTED, deleteMahasiswa);
+	yield takeLatest(t.MAHASISWA_DELETE_REQUESTED, deleteMahasiswa);
 }
 
 function* updateMahasiswa(action) {
@@ -88,19 +88,19 @@ function* updateMahasiswa(action) {
 		const updatedMahasiswa = yield response.json();
 
 		yield put({
-			type: t.EMPLOYEE_UPDATE_SUCCEEDED,
+			type: t.MAHASISWA_UPDATE_SUCCEEDED,
 			payload: updatedMahasiswa.data,
 		});
 	} catch (error) {
 		yield put({
-			type: t.EMPLOYEE_UPDATE_FAILED,
+			type: t.MAHASISWA_UPDATE_FAILED,
 			payload: error.message,
 		});
 	}
 }
 
 function* watchUpdateMahasiswa() {
-	yield takeLatest(t.EMPLOYEE_UPDATE_REQUESTED, updateMahasiswa);
+	yield takeLatest(t.MAHASISWA_UPDATE_REQUESTED, updateMahasiswa);
 }
 
 export default function* rootSaga() {

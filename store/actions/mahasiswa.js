@@ -9,34 +9,34 @@ export const setModalOpen = (isModalOpen) => {
 
 export const fetchMahasiswas = () => {
 	return {
-		type: t.EMPLOYEE_FETCH_REQUESTED,
+		type: t.MAHASISWA_FETCH_REQUESTED,
 	};
 };
 
 export const addMahasiswa = (mahasiswa) => {
 	return {
-		type: t.EMPLOYEE_ADD_REQUESTED,
+		type: t.MAHASISWA_ADD_REQUESTED,
 		payload: mahasiswa,
 	};
 };
 
 export const updateMahasiswa = (mahasiswa) => {
 	return {
-		type: t.EMPLOYEE_UPDATE_REQUESTED,
+		type: t.MAHASISWA_UPDATE_REQUESTED,
 		payload: mahasiswa,
 	};
 };
 
 export const deleteMahasiswa = (id) => {
 	return {
-		type: t.EMPLOYEE_DELETE_REQUESTED,
+		type: t.MAHASISWA_DELETE_REQUESTED,
 		payload: id,
 	};
 };
 
 export const setSelectedMahasiswa = (id) => {
 	return {
-		type: t.EMPLOYEE_SELECTED,
+		type: t.MAHASISWA_SELECTED,
 		payload: id,
 	};
 };

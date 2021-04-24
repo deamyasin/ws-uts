@@ -16,17 +16,17 @@ const mainReducer = (state = initialState, action) => {
 				...state,
 				isModalOpen: action.payload,
 			};
-		case t.EMPLOYEE_FETCH_SUCCEEDED:
+		case t.MAHASISWA_FETCH_SUCCEEDED:
 			return {
 				...state,
 				mahasiswaList: action.payload,
 			};
-		case t.EMPLOYEE_ADD_SUCCEEDED:
+		case t.MAHASISWA_ADD_SUCCEEDED:
 			return {
 				...state,
 				mahasiswaList: [action.payload, ...state.mahasiswaList],
 			};
-		case t.EMPLOYEE_UPDATE_SUCCEEDED:
+		case t.MAHASISWA_UPDATE_SUCCEEDED:
 			const updatedMahasiswa = state.mahasiswaList.map((mahasiswa) => {
 				if (mahasiswa._id === action.payload._id) {
 					return {
@@ -41,7 +41,7 @@ const mainReducer = (state = initialState, action) => {
 			});
 
 			return { ...state, mahasiswaList: updatedMahasiswa };
-		case t.EMPLOYEE_DELETE_SUCCEEDED:
+		case t.MAHASISWA_DELETE_SUCCEEDED:
 			const newMahasiswaList = state.mahasiswaList.filter(
 				(mahasiswa) => mahasiswa._id !== action.payload
 			);
@@ -49,7 +49,7 @@ const mainReducer = (state = initialState, action) => {
 				...state,
 				mahasiswaList: newMahasiswaList,
 			};
-		case t.EMPLOYEE_SELECTED:
+		case t.MAHASISWA_SELECTED:
 			const selectedMahasiswa = state.mahasiswaList.find(
 				(mahasiswa) => mahasiswa._id === action.payload
 			);
