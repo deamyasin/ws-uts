@@ -4,7 +4,7 @@ export function Layout({ children }) {
 	return (
 		<main className="layout">
 			<Head>
-				<title>NextJS | Full-stack CRUD App</title>
+				<title>Dea Muhamad Yasin | 187006055</title>
 			</Head>
 			{children}
 		</main>
