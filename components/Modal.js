@@ -105,11 +105,11 @@ export function Modal() {
 
 							<div className="form__element">
 								<label
-									htmlFor="NPM"
-									className={cx("label", errors.NPM && "label--error")}
+									htmlFor="npm"
+									className={cx("label", errors.npm && "label--error")}
 								>
-									{errors.NPM ? (
-										`${errors.NPM.message}`
+									{errors.npm ? (
+										`${errors.npm.message}`
 									) : (
 										<>
 											NPM&nbsp;<span className="label__required">*</span>
@@ -118,12 +118,12 @@ export function Modal() {
 								</label>
 								<input
 									type="number"
-									id="NPM"
-									name="NPM"
+									id="npm"
+									name="npm"
 									placeholder="NPM"
-									className={cx("input", errors.NPM && "input--error")}
+									className={cx("input", errors.npm && "input--error")}
 									ref={register({
-										required: "Phone is required!",
+										required: "NPM is required!",
 										minLength: {
 											value: 9,
 											message: "Minimum of 9 digits",

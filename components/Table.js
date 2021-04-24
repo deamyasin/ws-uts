@@ -31,10 +31,10 @@ export function Table() {
 			</thead>
 
 			<tbody className="table__body">
-				{state.mahasiswaList.map(({ _id, name, NPM, email, address, phone }) => (
+				{state.mahasiswaList.map(({ _id, name, npm, email, address, phone }) => (
 					<tr key={_id}>
 						<td>{name}</td>
-						<td>{NPM}</td>
+						<td>{npm}</td>
 						<td>{email}</td>
 						<td>{address}</td>
 						<td>{phone}</td>
