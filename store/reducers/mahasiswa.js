@@ -32,6 +32,7 @@ const mainReducer = (state = initialState, action) => {
 					return {
 						...mahasiswa,
 						name: action.payload.name,
+						npm: action.payload.npm,
 						email: action.payload.email,
 						address: action.payload.address,
 						phone: action.payload.phone,

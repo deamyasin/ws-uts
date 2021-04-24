@@ -45,6 +45,7 @@ export function Modal() {
 	useEffect(() => {
 		if (state.selectedMahasiswa) {
 			setValue("name", state.selectedMahasiswa.name);
+			setValue("npm", state.selectedMahasiswa.npm);
 			setValue("email", state.selectedMahasiswa.email);
 			setValue("address", state.selectedMahasiswa.address);
 			setValue("phone", state.selectedMahasiswa.phone);
