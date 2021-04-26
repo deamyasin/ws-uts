@@ -10,16 +10,10 @@ export default async (req, res) => {
 				const mahasiswas = await Mahasiswa.find({}).sort({
 					createdAt: "desc",
 				});
-				var fs = require('fs');
-				var json2xml = require('json2xml');
-				fs.readFile('data.json','utf8', function read (err, Mahasiswa) {
-					if (err) console.log(err);
-					return fs.writeFile('data.xml', json2xml(JSON.parse(Mahasiswa)));
-				})
-				return res.status(200).json({
+				var json2xml = require ('json2xml');
+				return res.status(200).json2xml({
 					success: true,
 					data: mahasiswas,
-					
 				});
 			} catch (error) {
 				return res.status(400).json({
