@@ -1,5 +1,6 @@
 import Mahasiswa from "@/models/Mahasiswa";
 import "@/utils/dbConnect";
+var json2xml = require('@/node_modules/json2xml/json2xml.js');
 
 export default async (req, res) => {
 	const { method } = req;
@@ -11,6 +12,7 @@ export default async (req, res) => {
 					createdAt: "desc",
 				});
 				return res.status(200).json2xml(
+					{header: true},
 					{success: true},
 					JSON.parse(Mahasiswa)
 				);
