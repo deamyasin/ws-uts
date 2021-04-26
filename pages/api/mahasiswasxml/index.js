@@ -10,13 +10,12 @@ export default async (req, res) => {
 				const mahasiswas = await Mahasiswa.find({}).sort({
 					createdAt: "desc",
 				});
-				var json2xml = require ('json2xml');
-				return res.status(200).json2xml({
-					success: true,
-					data: mahasiswas,
-				});
+				return res.status(200).json2xml(
+					{success: true},
+					[{data: mahasiswas}]
+				);
 			} catch (error) {
-				return res.status(400).json({
+				return res.status(400).json2xml({
 					success: false,
 				});
 			}
