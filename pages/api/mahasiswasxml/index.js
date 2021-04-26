@@ -12,12 +12,12 @@ export default async (req, res) => {
 				});
 				return res.status(200).json2xml(
 					{success: true},
-					[{data: mahasiswas}]
+					JSON.parse(Mahasiswa)
 				);
 			} catch (error) {
-				return res.status(400).json2xml({
-					success: false,
-				});
+				return res.status(400).json2xml(
+					{success: false}
+				);
 			}
 		case "POST":
 			try {
